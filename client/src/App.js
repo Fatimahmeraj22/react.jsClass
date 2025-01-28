@@ -10,10 +10,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
 import Modal from 'react-bootstrap/Modal';
+import { useState } from 'react';
 
 
-function App() {
-  return (
+
     <div>
       <Button variant="primary">Primary</Button>
       <Button variant="secondary">Secondary</Button>
@@ -80,6 +80,24 @@ function App() {
         </Nav.Link>
       </Nav.Item>
     </Nav>
+    
+    <>
+      {[
+        'primary',
+        'secondary',
+        'success',
+        'danger',
+        'warning',
+        'info',
+        'light',
+        'dark',
+      ].map((variant) => (
+        <Alert key={variant} variant={variant}>
+          This is a {variant} alert—check it out!
+        </Alert>
+      ))}
+    </>
+  
 
     <Table striped bordered hover>
       <thead>
@@ -162,8 +180,8 @@ function App() {
 
     </div>
 
-    
-  );
-}
+  
+
+
 
 export default App;
